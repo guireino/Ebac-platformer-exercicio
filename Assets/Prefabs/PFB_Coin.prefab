@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2728392141524662852}
@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2728392141524662852}
   - component: {fileID: 8106647234039006770}
+  - component: {fileID: 4736401300355864327}
   m_Layer: 0
   m_Name: PFB_Coin
   m_TagString: Untagged
@@ -111,7 +112,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.52, y: -3.84, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8074064895176569563}
@@ -146,9 +147,22 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.029467106, y: -0.0073667765}
   serializedVersion: 2
   m_Radius: 0.94200885
+--- !u!114 &4736401300355864327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713675606899872923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb2a2ba365cc2648b5162bc1476c178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compareTag: Player
