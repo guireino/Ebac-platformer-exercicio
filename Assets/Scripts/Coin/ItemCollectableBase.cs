@@ -19,8 +19,13 @@ public class ItemCollectableBase : MonoBehaviour{
         OnCollect();
     }
 
+    // public void AddCoins(int amount = 1){
+    //     coins += amount;
+    //     OnCollect();
+    // }
+
     protected virtual void OnCollect(){
-        
+
     }
 
 }
