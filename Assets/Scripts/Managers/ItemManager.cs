@@ -7,7 +7,7 @@ using TMPro;
 
 public class ItemManager : Singleton<ItemManager>{
 
-    public int coins;
+    public SOInt coins;
     public TextMeshProUGUI uiTextCoins;
 
     private void Start(){
@@ -15,18 +15,17 @@ public class ItemManager : Singleton<ItemManager>{
     }
 
     private void Reset(){
-        coins = 0;
+        coins.value = 0;
         UpdateUI();
     }
 
     public void AddCoins(int amount = 1){
-        coins += amount;
-        Debug.Log("coins " + coins);
+        coins.value += amount;
         UpdateUI();
     }
 
-    private void UpdateUI(){
-       UIInGameManager.Instance.UpdateTextCoins(coins.ToString());
+    private void UpdateUI(){ // usamos SOUIIntUpdate para atualizar UI coins
+       //UIInGameManager.Instance.UpdateTextCoins(coins.value.ToString());
     }
    
 }

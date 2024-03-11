@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23868795702d055fc8dd7f8a6d1fc86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: {fileID: 11400000, guid: fe16e40bada35ccbdb9945f7c926d06a, type: 2}
   uiTextCoins: {fileID: 529904959}
 --- !u!1001 &137582383
 PrefabInstance:
@@ -633,7 +633,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.79, y: -6.63, z: -10}
+  m_LocalPosition: {x: -1.11, y: -6.63, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -684,6 +684,7 @@ GameObject:
   - component: {fileID: 529904958}
   - component: {fileID: 529904960}
   - component: {fileID: 529904959}
+  - component: {fileID: 529904961}
   m_Layer: 5
   m_Name: txtCoins
   m_TagString: Untagged
@@ -807,6 +808,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529904957}
   m_CullTransparentMesh: 1
+--- !u!114 &529904961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529904957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc83b05e7a824083a4d42c26786a4d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soInt: {fileID: 11400000, guid: fe16e40bada35ccbdb9945f7c926d06a, type: 2}
+  uiTextValue: {fileID: 529904959}
 --- !u!1 &553983643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1377,7 @@ Transform:
   m_GameObject: {fileID: 1170592906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.79, y: -6.63, z: 0}
+  m_LocalPosition: {x: -1.11, y: -6.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1456,11 +1471,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1170592909}
   friction: {x: -0.1, y: 0}
-  speed: 5
-  speedRun: 10
-  forceJump: 5
+  speed: {fileID: 11400000, guid: 1bed6dd72bc24a59380feeaa6f9c7bcb, type: 2}
+  speedRun: {fileID: 11400000, guid: e4c4055fca016f6868e1cc052d4f3840, type: 2}
+  forceJump: {fileID: 11400000, guid: a37dd7ed364ad6e49abd896e10d4697f, type: 2}
+  left: {fileID: 11400000, guid: ed69dd4e69fb02f89ac3e905a2e64eff, type: 2}
+  right: {fileID: 11400000, guid: e4bab91f4a344c8da9f1325b25a3e054, type: 2}
+  playerSwipeDuration: {fileID: 11400000, guid: 2c598077d42e7d116b76de7db302e044, type: 2}
   animator: {fileID: 778437611}
-  playerSwipeDuration: 0.1
   boolRun: Run
 --- !u!114 &1170592912
 MonoBehaviour:
@@ -2039,7 +2056,7 @@ Transform:
   m_GameObject: {fileID: 1656976822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.79, y: -6.63, z: -10}
+  m_LocalPosition: {x: -1.11, y: -6.63, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

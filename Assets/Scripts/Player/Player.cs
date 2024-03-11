@@ -11,11 +11,17 @@ public class Player : MonoBehaviour{
     [Header("Speed Setup")]
     public Rigidbody2D rb;
     public Vector2 friction = new Vector2(.1f, 0);
-    public float speed, speedRun, forceJump = 2;
+    public SOFloat speed;
+    public SOFloat speedRun;
+    public SOFloat forceJump;
+    //public float speed, speedRun, forceJump = 2; // 5, 10, 5
 
     [Header("Animation Setup")]
+    public SOInt left;
+    public SOInt right;
+    public SOFloat playerSwipeDuration;
     public Animator animator;
-    public float playerSwipeDuration = .1f;
+    //public float playerSwipeDuration = .1f;
     public string boolRun = "Run";
 
     // Update is called once per frame
@@ -29,19 +35,19 @@ public class Player : MonoBehaviour{
 
         //verificando se esta andando ou corrento
         if(Input.GetKey(KeyCode.LeftControl)){
-            _currentSpeed = speedRun;
+            _currentSpeed = speedRun.value;
         }else{
-            _currentSpeed = speed;
+            _currentSpeed = speed.value;
         }
 
         _isRunning = Input.GetKey(KeyCode.LeftControl);
 
         if(Input.GetKey(KeyCode.LeftArrow)){
             rb.velocity = new Vector2(-_currentSpeed, rb.velocity.y);
-            AnimationMoviment(-1, true);
+            AnimationMoviment(right.value, true); //-1 right
         }else if(Input.GetKey(KeyCode.RightArrow)){
             rb.velocity = new Vector2(_currentSpeed, rb.velocity.y);
-             AnimationMoviment(1, true);
+             AnimationMoviment(left.value, true); // 1eft
         }else{
              animator.SetBool(boolRun, false);
         }
@@ -56,7 +62,7 @@ public class Player : MonoBehaviour{
     private void AnimationMoviment(int x, bool SetRun){
 
         if(rb.transform.localScale.x != x){
-            rb.transform.DOScaleX(x, playerSwipeDuration);
+            rb.transform.DOScaleX(x, playerSwipeDuration.value);
         }
 
         animator.SetBool(boolRun, SetRun);
@@ -66,7 +72,7 @@ public class Player : MonoBehaviour{
     public void HandleJump(){
 
         if(Input.GetKeyDown(KeyCode.Space)){
-            rb.velocity = Vector2.up * forceJump;
+            rb.velocity = Vector2.up * forceJump.value;
         }
     }
 }
