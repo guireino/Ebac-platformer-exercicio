@@ -73,6 +73,13 @@ public class Player : MonoBehaviour{
 
         if(Input.GetKeyDown(KeyCode.Space)){
             rb.velocity = Vector2.up * forceJump.value;
+
+            PlayJumpVFX();
         }
     }
+
+    private void PlayJumpVFX(){
+        VFXManager.Instance.PlayVFXByType(VFXManager.VFXType.JUMP, transform.position);
+    }
+
 }
