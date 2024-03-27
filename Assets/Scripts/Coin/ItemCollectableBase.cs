@@ -9,6 +9,9 @@ public class ItemCollectableBase : MonoBehaviour{
     public GameObject graphicItem;
     public float timeToHide = 3;
 
+    [Header("Sounds")]
+    public AudioSource audioSource;
+
     private void OnTriggerEnter2D(Collider2D col) {
         
         if(col.transform.CompareTag(compareTag)){
@@ -36,6 +39,7 @@ public class ItemCollectableBase : MonoBehaviour{
         if(particleSystem != null){
             particleSystem.Play();
         }
+        if(audioSource != null){audioSource.Play(); }
     }
 
 }
